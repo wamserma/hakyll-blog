@@ -26,7 +26,7 @@ main = do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["page/about.rst", "page/contact.markdown"]) $ do
+    match (fromList ["page/about.markdown", "page/contact.markdown"]) $ do
         route   $ composeRoutes oneUpRoute $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
